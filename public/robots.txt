@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow important files
+Allow: /api/sitemap
+Allow: /*.css
+Allow: /*.js
+
+# Sitemap location
+Sitemap: https://etienne.dev/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Host
+Host: https://etienne.dev

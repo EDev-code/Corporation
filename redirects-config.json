@@ -1,0 +1,61 @@
+{
+  "redirects": {
+    "description": "Configuration des redirections 301 pour le portfolio d'Étienne",
+    "categories": {
+      "pages": {
+        "/about": "/#about",
+        "/about-me": "/#about",
+        "/portfolio": "/#projects",
+        "/work": "/#projects",
+        "/projects": "/#projects",
+        "/skills": "/#skills",
+        "/competences": "/#skills",
+        "/experience": "/#experience",
+        "/cv": "/#experience",
+        "/resume": "/#experience",
+        "/contact": "/#contact",
+        "/contact-me": "/#contact",
+        "/get-in-touch": "/#contact"
+      },
+      "services": {
+        "/services": "/#about",
+        "/services/web-development": "/#projects",
+        "/services/mobile-development": "/#projects",
+        "/services/fullstack-development": "/#about",
+        "/freelance": "/#about",
+        "/developpeur-freelance": "/#about",
+        "/freelance-benin": "/#about",
+        "/hire-me": "/#contact",
+        "/devis": "/#contact"
+      },
+      "technologies": {
+        "/nextjs": "/#skills",
+        "/next-js": "/#skills",
+        "/laravel": "/#skills",
+        "/flutter": "/#skills",
+        "/firebase": "/#skills",
+        "/react": "/#skills",
+        "/php": "/#skills",
+        "/javascript": "/#skills",
+        "/typescript": "/#skills"
+      },
+      "legacy": {
+        "/index.html": "/",
+        "/index.php": "/",
+        "/home.html": "/",
+        "/blog": "/",
+        "/articles": "/",
+        "/admin": "/",
+        "/dashboard": "/"
+      }
+    },
+    "middleware_rules": {
+      "https_redirect": "Force HTTPS in production",
+      "www_redirect": "Remove www subdomain",
+      "trailing_slash": "Remove trailing slashes",
+      "double_slash": "Fix double slashes",
+      "special_chars": "Clean special characters",
+      "utm_preservation": "Preserve UTM parameters"
+    }
+  }
+}
