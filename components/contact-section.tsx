@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -17,10 +16,25 @@ export default function ContactSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
+
+    try {
+      const response = await fetch("https://formspree.io/f/xdkzjqad", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        alert("Message envoyé avec succès !")
+        setFormData({ firstName: "", lastName: "", email: "", message: "" })
+      } else {
+        alert("Erreur lors de l'envoi. Veuillez réessayer.")
+      }
+    } catch (error) {
+      alert("Erreur réseau. Veuillez réessayer.")
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -142,7 +156,7 @@ export default function ContactSection() {
                       Nom
                     </label>
                     <Input
-                      id="lastName"
+                      id="lastName"    
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleChange}
