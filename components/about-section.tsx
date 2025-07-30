@@ -75,8 +75,8 @@ export default function AboutSection() {
           <div className="relative">
             <div className="w-full h-90 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://i.pinimg.com/736x/6a/a5/d0/6aa5d09dc872344a3b24604d208e214c.jpg"
-                alt="Photo de profil de développeur"
+                src="etienne.jpg" // ← image locale depuis /public/images
+                alt="EDev, Etienne METOEVI"
                 className="w-full h-full object-cover"
               />
             </div>
