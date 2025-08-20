@@ -35,7 +35,7 @@ export default function AboutSection() {
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">À propos de moi</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Développeur fullstack passionné, spécialisé dans les technologies web et mobile modernes. Je crée des
@@ -43,7 +43,18 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* Vision + Image */}
+        {/* Photo entre header et vision */}
+        <div className="mb-12 w-full flex justify-center">
+          <div className="w-full max-w-md h-96 rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="/etienne.jpg"
+              alt="Etienne METOEVI"
+              className="w-full h-full object-cover brightness-90 transition duration-500 hover:brightness-100"
+            />
+          </div>
+        </div>
+
+        {/* Vision */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Ma vision</h3>
@@ -75,17 +86,8 @@ export default function AboutSection() {
               ))}
             </div>
           </div>
-
-          <div className="relative group">
-            <div className="w-full h-100 rounded-2xl overflow-hidden shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
-              <img
-                src="/etienne.jpg"
-                alt="Etienne METOEVI"
-                className="w-full h-full object-cover brightness-90 group-hover:brightness-100 transition duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-            </div>
-          </div>
+          {/* On peut mettre un élément vide ou décoration ici pour l'équilibre sur desktop */}
+          <div className="hidden md:block"></div>
         </div>
 
         {/* Features */}
