@@ -27,7 +27,7 @@ export default function HeroSection() {
     if (displayedLength < fullText.length) {
       const timeout = setTimeout(() => {
         setDisplayedLength(displayedLength + 1)
-      }, 150) // vitesse d'écriture
+      }, 150)
       return () => clearTimeout(timeout)
     }
   }, [displayedLength, fullText.length])
@@ -37,7 +37,7 @@ export default function HeroSection() {
     if (displayedLength === fullText.length && jobTitleLength < jobTitleText.length) {
       const timeout = setTimeout(() => {
         setJobTitleLength(jobTitleLength + 1)
-      }, 100) // vitesse d'écriture un peu plus rapide
+      }, 100)
       return () => clearTimeout(timeout)
     }
   }, [jobTitleLength, displayedLength, jobTitleText.length])
@@ -68,62 +68,45 @@ export default function HeroSection() {
   const visibleJobTitle = jobTitleText.slice(0, jobTitleLength)
 
   return (
-    <section
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 pt-20"
-      itemScope
-      itemType="https://schema.org/Person"
-    >
-      <div className="container mx-auto px-4 text-center">
-        <div
-          className={`transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
-        >
+    <section className="relative min-h-screen flex items-center justify-center pt-20" itemScope itemType="https://schema.org/Person">
+      
+      {/* Background Image floutée */}
+      <div
+        className="absolute inset-0 bg-cover bg-center filter blur-sm"
+        style={{ backgroundImage: "url('/etiennee.jpg')" }}
+      />
+      
+      {/* Overlay sombre */}
+      <div className="absolute inset-0 bg-black/50"></div>
+
+      <div className="relative container mx-auto px-4 text-center z-10">
+        <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+
           {/* Avatar */}
           <div className="mb-8">
-            <div
-              className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white text-4xl font-bold shadow-xl"
-              itemProp="image"
-              role="img"
-              aria-label="Avatar de Etienne"
-            >
+            <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white text-4xl font-bold shadow-xl" itemProp="image" role="img" aria-label="Avatar de Etienne">
               EDev
             </div>
           </div>
 
           {/* Main Content - texte animé */}
-          <h1
-            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6"
-            itemProp="name"
-            style={{ minHeight: "4.5rem", fontFamily: "inherit" }}
-          >
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6" itemProp="name" style={{ minHeight: "4.5rem", fontFamily: "inherit" }}>
             {before}
-            <span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600"
-              style={{ fontFamily: "'Lobster', cursive" }}
-            >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400" style={{ fontFamily: "'Lobster', cursive" }}>
               {highlight}
             </span>
             {after}
             <span className="blinking-cursor">|</span>
           </h1>
 
-          {/* Job Title animé lettre par lettre */}
-          <p
-            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4"
-            itemProp="jobTitle"
-          >
+          {/* Job Title animé */}
+          <p className="text-xl md:text-2xl text-gray-200 mb-4" itemProp="jobTitle">
             {visibleJobTitle}
-            {jobTitleLength < jobTitleText.length && (
-              <span className="blinking-cursor">|</span>
-            )}
+            {jobTitleLength < jobTitleText.length && <span className="blinking-cursor">|</span>}
           </p>
 
           {/* Description */}
-          <p
-            className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto"
-            itemProp="description"
-          >
+          <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto" itemProp="description">
             Je transforme vos idées en solutions digitales innovantes et performantes. Basé au Bénin et dans le monde entier, passionné par la création d'applications web et mobile.
           </p>
 
@@ -135,7 +118,6 @@ export default function HeroSection() {
                 <ArrowDown className="ml-2 w-4 h-4" />
               </Button>
             </a>
-
             <a href="#contact">
               <Button variant="outline" size="lg">
                 Me contacter
@@ -172,9 +154,7 @@ export default function HeroSection() {
           margin-left: 2px;
         }
         @keyframes blink {
-          50% {
-            opacity: 0;
-          }
+          50% { opacity: 0; }
         }
       `}</style>
     </section>
