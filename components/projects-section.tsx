@@ -51,7 +51,7 @@ export default function ProjectsSection() {
     {
       "title": "CampusHome",
       "description": "CampusHome est une plateforme de gestion de logements étudiants. Les propriétaires peuvent ajouter des logements vérifiés et les étudiants peuvent réserver facilement, avec contrats et reçus générés automatiquement.",
-      "image": "/campushome.png",
+      "image": "/campusHome.png",
       "technologies": ["Laravel", "TailwindCss", "MySQL", "CSS", "JavaScript"],
       "liveUrl": "#",
       "codeUrl": "#"
