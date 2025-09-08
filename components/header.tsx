@@ -42,7 +42,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-            E.Dev
+            <a href="/">E.Dev</a>
           </div>
 
           {/* Desktop Navigation */}

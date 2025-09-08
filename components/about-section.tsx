@@ -45,9 +45,9 @@ export default function AboutSection() {
 
         {/* Photo entre header et vision */}
         <div className="mb-12 w-full flex justify-center">
-          <div className="w-full max-w-md h-96 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="w-full max-w-md h-95 rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="/etienne.jpg"
+              src="/chef.jpg"
               alt="Etienne METOEVI"
               className="w-full h-full object-cover brightness-90 transition duration-500 hover:brightness-100"
             />
@@ -109,7 +109,6 @@ export default function AboutSection() {
     </section>
   )
 }
-
 
 // "use client"
 
