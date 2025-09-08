@@ -21,7 +21,7 @@ export default function ProjectsSection() {
       "description": "EDevSpace est un site web complet pour une entreprise. Il offre une interface moderne et entièrement responsive.",
       "image": "/edevspace.png",
       "technologies": ["Next.js", "Neon", "TypeScript", "TailwindCss"],
-      "liveUrl": "#",
+      "liveUrl": "https://edevspace.vercel.app",
       "codeUrl": "#"
     },
     {
@@ -45,7 +45,7 @@ export default function ProjectsSection() {
       "description": "CampusHome est une plateforme de gestion de logements étudiants. Les propriétaires peuvent ajouter des logements vérifiés et les étudiants peuvent réserver facilement, avec contrats et reçus générés automatiquement.",
       "image": "/campusHome.png",
       "technologies": ["Laravel", "TailwindCss", "MySQL", "CSS", "JavaScript"],
-      "liveUrl": "#",
+      "liveUrl": "/",
       "codeUrl": "#"
     },
     {
@@ -53,7 +53,7 @@ export default function ProjectsSection() {
       "description": "DeBi est un portfolio moderne présentant le parcours d'une pharmacienne. Il met en avant ses compétences et réalisations professionnelles.",
       "image": "/portfolioDel.jpg",
       "technologies": ["Next.js", "TailwindCss", "Formspree"],
-      "liveUrl": "https://enet.infinityfreeapp.com/",
+      "liveUrl": "https://houefa.vercel.app/",
       "codeUrl": "#"
     },
     {
@@ -69,7 +69,7 @@ export default function ProjectsSection() {
       "description": "Portfolio présente le parcours de EDev. Il met en avant ses compétences et ses projets réalisés.",
       "image": "/portfolio.png",
       "technologies": ["PHP", "CSS", "MySQL", "JavaScript", "Bootstrap"],
-      "liveUrl": "https://enet.infinityfreeapp.com/",
+      "liveUrl": "https//corporation-flax.vercel.app",
       "codeUrl": "#"
     },
     {
@@ -85,7 +85,7 @@ export default function ProjectsSection() {
       "description": "Tourisme est une plateforme de tourisme au Bénin. Elle permet de réserver et de payer directement via la plateforme.",
       "image": "/tourism.png",
       "technologies": ["Next.js", "TailwindCss", "PostgreSQL", "Stripe"],
-      "liveUrl": "https://enet.infinityfreeapp.com/",
+      "liveUrl": "/",
       "codeUrl": "#"
     },
     {
@@ -97,7 +97,7 @@ export default function ProjectsSection() {
       "codeUrl": "#"
     },
     {
-      "title": "E-ServX Wifi",https://eloge-one.vercel.app/
+      "title": "E-ServX Wifi",
       "description": "E-ServX Wifi est une plateforme de vente de wifi zone. Elle offre une interface moderne adaptée à l'expérience utilisateur.",
       "image": "/wifi.png",
       "technologies": ["Next.js", "TailwindCss", "TypeScript", "PostgreSQL"],
