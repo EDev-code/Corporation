@@ -17,14 +17,6 @@ export default function ProjectsSection() {
       codeUrl: "#",
     },
     {
-     "title": "ShowBiz",
-      "description": "ShowBiz est une plateforme de valorisation des artistes avec la possibilité de monétiser leurs contenus. Elle dispose d'interfaces dédiées pour les administrateurs, les artistes et les particuliers.",
-      "image": "/showbiz.png",
-      "technologies": ["Next.js", "Neon", "TypeScript", "TailwindCss", "Stripe", "AdMod"],
-      "liveUrl": "#",
-      "codeUrl": "#"
-    },
-    {
       "title": "EDevSpace",
       "description": "EDevSpace est un site web complet pour une entreprise. Il offre une interface moderne et entièrement responsive.",
       "image": "/edevspace.png",
@@ -69,7 +61,7 @@ export default function ProjectsSection() {
       "description": "Photography est un portfolio présentant le parcours, les services et les réalisations d'un photographe. Il offre une expérience visuelle immersive pour les visiteurs.",
       "image": "/portfolioKitti.png",
       "technologies": ["Next.js", "TailwindCss", "Formspree"],
-      "liveUrl": "https://enet.infinityfreeapp.com/",
+      "liveUrl": "https://eloge-one.vercel.app/",
       "codeUrl": "#"
     },
     {
@@ -85,7 +77,7 @@ export default function ProjectsSection() {
       "description": "E-ServN est une plateforme de restauration multi-espaces. On peut y ajouter des restaurants, suivre les commandes et gérer les livraisons avec des espaces pour administrateurs, livreurs et clients.",
       "image": "/eservnResto.png",
       "technologies": ["Next.js", "TailwindCss", "Formspree"],
-      "liveUrl": "https://enet.infinityfreeapp.com/",
+      "liveUrl": "https://eservn.vercel.app/",
       "codeUrl": "#"
     },
     {
@@ -101,11 +93,11 @@ export default function ProjectsSection() {
       "description": "Alex.dev est le portfolio d'un développeur web fullstack. Il présente ses compétences, projets et réalisations.",
       "image": "/alexdev.jpg",
       "technologies": ["Next.js", "TailwindCss", "Formspree", "TypeScript"],
-      "liveUrl": "#",
+      "liveUrl": "https://vercel.com/metoevi-etiennes-projects/edevcode",
       "codeUrl": "#"
     },
     {
-      "title": "E-ServX Wifi",
+      "title": "E-ServX Wifi",https://eloge-one.vercel.app/
       "description": "E-ServX Wifi est une plateforme de vente de wifi zone. Elle offre une interface moderne adaptée à l'expérience utilisateur.",
       "image": "/wifi.png",
       "technologies": ["Next.js", "TailwindCss", "TypeScript", "PostgreSQL"],
