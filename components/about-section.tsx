@@ -47,7 +47,7 @@ export default function AboutSection() {
         <div className="mb-12 w-full flex justify-center">
           <div className="w-full max-w-md h-95 rounded-2xl overflow-hidden shadow-2xl">
             <img
-              src="/chef.jpg"
+              src="/Metoevi.jpg"
               alt="Etienne METOEVI"
               className="w-full h-full object-cover brightness-90 transition duration-500 hover:brightness-100"
             />

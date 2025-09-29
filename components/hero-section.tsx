@@ -46,7 +46,7 @@ export default function HeroSection() {
 
   const visibleJobTitle = jobTitleText.slice(0, jobTitleLength)
 
-  const images = ["/chef.jpg", "/edev.jpg", "/logo.jpg"] // liste de tes images
+  const images = ["/Metos.png", "/Etienne.png", "/Metoevi Etienne.jpg"] // liste de tes images
   const duplicatedImages = [...images, ...images] // duplication pour boucle infinie
 
   return (
