@@ -29,15 +29,15 @@ export const metadata: Metadata = {
     "freelance",
     "portfolio",
   ],
-  authors: [{ name: "Etienne METOEVI", url: "https://etienne.dev" }],
+  authors: [{ name: "Etienne METOEVI", url: "https://corporation-flax.vercel.app" }],
   creator: "Etienne METOEVI",
   publisher: "E.Dev",
   formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+    email: true,
+    address: true,
+    telephone: true,
   },
-  metadataBase: new URL("https://etienne.dev"),
+  metadataBase: new URL("https://corporation-flax.vercel.app"),
   alternates: {
     canonical: "/",
     languages: {
@@ -48,14 +48,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://etienne.dev",
+    url: "https://corporation-flax.vercel.app",
     title: "EDev - Développeur Fullstack Web & Mobile",
     description:
       "Développeur Fullstack basé au Bénin, spécialisé en Next.js, Laravel, Flutter et Firebase. Je transforme vos idées en solutions digitales innovantes.",
     siteName: "E.Dev",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/Metoevi.jpg",
         width: 1200,
         height: 630,
         alt: "Etienne METOEVI - Développeur Fullstack Portfolio",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Etienne METOEVI - Développeur Fullstack Web & Mobile",
     description: "Développeur Fullstack basé au Bénin. Next.js, Laravel, Django, Flutter, Firebase.",
-    images: ["/og-image.jpg"],
+    images: ["/Metos.jpg"],
     creator: "@etienne_dev",
   },
   robots: {
@@ -82,9 +82,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
+    yandex: "d04f8547a32e920c",
   },
-  generator: 'v0.dev'
+  generator: 'E.Dev'
 }
 
 export default function RootLayout({
