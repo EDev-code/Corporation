@@ -72,16 +72,12 @@ export default function HeroSection() {
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             {before}
-            {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-              {highlight}
-            </span> */}
             <span
               className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"
               style={{ fontFamily: "'Lobster', cursive" }}
             >
               {highlight}
             </span>
-
             {after}
             <span className="blinking-cursor">|</span>
           </h1>
@@ -91,18 +87,42 @@ export default function HeroSection() {
             {jobTitleLength < jobTitleText.length && <span className="blinking-cursor">|</span>}
           </p>
 
+          {/* Boutons */}
           <div className="flex justify-center gap-4 mb-10">
-            <Button className="bg-blue-600 hover:bg-blue-700">
+            <Button
+              className="bg-blue-600 hover:bg-blue-700"
+              onClick={() => {
+                const section = document.getElementById("projects")
+                if (section) section.scrollIntoView({ behavior: "smooth" })
+              }}
+            >
               Voir mes projets <ArrowDown className="ml-2 w-4 h-4" />
             </Button>
-            <Button variant="outline">Me contacter</Button>
+
+            <Button
+              variant="outline"
+              onClick={() => {
+                const section = document.getElementById("contact") // cible le formulaire
+                if (section) section.scrollIntoView({ behavior: "smooth" })
+              }}
+            >
+              Me contacter
+            </Button>
           </div>
 
+          {/* Liens sociaux */}
           <div className="flex justify-center gap-6">
-            <Github className="text-white" />
-            <Linkedin className="text-white" />
-            <Mail className="text-white" />
+            <a href="https://github.com/MetoeviEtienne" target="_blank" rel="noopener noreferrer">
+              <Github className="text-white w-6 h-6 hover:text-gray-300 transition" />
+            </a>
+            <a href="https://www.linkedin.com/in/etienne-metoevi-197931315/" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="text-white w-6 h-6 hover:text-gray-300 transition" />
+            </a>
+            <a href="mailto:etiennemetoevi82@gmail.com.com">
+              <Mail className="text-white w-6 h-6 hover:text-gray-300 transition" />
+            </a>
           </div>
+
         </div>
       </div>
 
@@ -129,7 +149,6 @@ export default function HeroSection() {
     </section>
   )
 }
-
 
 
 // "use client"
