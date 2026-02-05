@@ -7,45 +7,81 @@ import { useEffect, useState } from "react"
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
 
+  const fullText = "Bonjour, je suis Etienne"
+  const highlightedWord = "Etienne"
+  const jobTitleText = "Développeur Fullstack Web & Mobile"
+
+  const [displayedLength, setDisplayedLength] = useState(0)
+  const [jobTitleLength, setJobTitleLength] = useState(0)
+
   useEffect(() => setIsVisible(true), [])
+
+  // Animation pour le texte principal
+  useEffect(() => {
+    if (displayedLength < fullText.length) {
+      const timeout = setTimeout(() => setDisplayedLength(displayedLength + 1), 150)
+      return () => clearTimeout(timeout)
+    }
+  }, [displayedLength])
+
+  // Animation pour le titre du job
+  useEffect(() => {
+    if (displayedLength === fullText.length && jobTitleLength < jobTitleText.length) {
+      const timeout = setTimeout(() => setJobTitleLength(jobTitleLength + 1), 100)
+      return () => clearTimeout(timeout)
+    }
+  }, [jobTitleLength, displayedLength])
+
+  // Construction du texte avec highlight
+  const visibleText = fullText.slice(0, displayedLength)
+  const startIndex = fullText.indexOf(highlightedWord)
+  const endIndex = startIndex + highlightedWord.length
+
+  let before = "", highlight = "", after = ""
+  if (displayedLength <= startIndex) before = visibleText
+  else if (displayedLength <= endIndex) {
+    before = fullText.slice(0, startIndex)
+    highlight = visibleText.slice(startIndex, displayedLength)
+  } else {
+    before = fullText.slice(0, startIndex)
+    highlight = fullText.slice(startIndex, endIndex)
+    after = visibleText.slice(endIndex, displayedLength)
+  }
+
+  const visibleJobTitle = jobTitleText.slice(0, jobTitleLength)
 
   const images = ["/Metos.png", "/Etienne.png", "/Metoevi Etienne.jpg"]
   const duplicatedImages = [...images, ...images]
 
   return (
-    <section
-      className="relative mt-20 h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden"
-      itemScope
-      itemType="https://schema.org/Person"
-    >
-      {/* Background carousel */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-20" itemScope itemType="https://schema.org/Person">
+      {/* Carrousel */}
+      <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 flex animate-slide-left">
           {duplicatedImages.map((img, idx) => (
-            <div
-              key={idx}
-              className="w-full h-full bg-cover bg-center blur-sm"
-              style={{ backgroundImage: `url('${img}')` }}
-            />
+            <div key={idx} className="w-full h-full bg-cover bg-center blur-sm" style={{ backgroundImage: `url('${img}')` }} />
           ))}
         </div>
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 text-center">
-        <div className={`transition-all duration-1000 ${isVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}>
+      <div className="relative container mx-auto px-4 text-center z-10">
+        <div className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Bonjour, je suis{" "}
+            {before}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
-              Etienne
+              {highlight}
             </span>
+            {after}
+            <span className="blinking-cursor">|</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-200 mb-6">
-            Développeur Fullstack Web & Mobile
+            {visibleJobTitle}
+            {jobTitleLength < jobTitleText.length && <span className="blinking-cursor">|</span>}
           </p>
 
           <div className="flex justify-center gap-4 mb-10">
@@ -64,11 +100,21 @@ export default function HeroSection() {
       </div>
 
       <style jsx>{`
+        .blinking-cursor {
+          font-weight: 100;
+          font-size: 2rem;
+          color: #0c4a6e;
+          animation: blink 1s step-start infinite;
+          margin-left: 2px;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
         @keyframes slideLeft {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
         .animate-slide-left {
+          display: flex;
           width: 200%;
           animation: slideLeft 50s linear infinite;
         }
@@ -76,6 +122,87 @@ export default function HeroSection() {
     </section>
   )
 }
+
+
+
+// "use client"
+
+// import { Button } from "@/components/ui/button"
+// import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+// import { useEffect, useState } from "react"
+
+// export default function HeroSection() {
+//   const [isVisible, setIsVisible] = useState(false)
+
+//   useEffect(() => setIsVisible(true), [])
+
+//   const images = ["/Metos.png", "/Etienne.png", "/Metoevi Etienne.jpg"]
+//   const duplicatedImages = [...images, ...images]
+
+//   return (
+//     <section
+//       className="relative mt-20 h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden"
+//       itemScope
+//       itemType="https://schema.org/Person"
+//     >
+//       {/* Background carousel */}
+//       <div className="absolute inset-0 z-0 overflow-hidden">
+//         <div className="absolute inset-0 flex animate-slide-left">
+//           {duplicatedImages.map((img, idx) => (
+//             <div
+//               key={idx}
+//               className="w-full h-full bg-cover bg-center blur-sm"
+//               style={{ backgroundImage: `url('${img}')` }}
+//             />
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Overlay */}
+//       <div className="absolute inset-0 bg-black/60 z-10"></div>
+
+//       {/* Content */}
+//       <div className="relative z-20 container mx-auto px-4 text-center">
+//         <div className={`transition-all duration-1000 ${isVisible ? "opacity-100" : "opacity-0 translate-y-10"}`}>
+//           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+//             Bonjour, je suis{" "}
+//             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+//               Etienne
+//             </span>
+//           </h1>
+
+//           <p className="text-xl md:text-2xl text-gray-200 mb-6">
+//             Développeur Fullstack Web & Mobile
+//           </p>
+
+//           <div className="flex justify-center gap-4 mb-10">
+//             <Button className="bg-blue-600 hover:bg-blue-700">
+//               Voir mes projets <ArrowDown className="ml-2 w-4 h-4" />
+//             </Button>
+//             <Button variant="outline">Me contacter</Button>
+//           </div>
+
+//           <div className="flex justify-center gap-6">
+//             <Github className="text-white" />
+//             <Linkedin className="text-white" />
+//             <Mail className="text-white" />
+//           </div>
+//         </div>
+//       </div>
+
+//       <style jsx>{`
+//         @keyframes slideLeft {
+//           0% { transform: translateX(0); }
+//           100% { transform: translateX(-50%); }
+//         }
+//         .animate-slide-left {
+//           width: 200%;
+//           animation: slideLeft 50s linear infinite;
+//         }
+//       `}</style>
+//     </section>
+//   )
+// }
 
 
 
