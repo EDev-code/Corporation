@@ -72,9 +72,16 @@ export default function HeroSection() {
           
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
             {before}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+            {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+              {highlight}
+            </span> */}
+            <span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400"
+              style={{ fontFamily: "'Lobster', cursive" }}
+            >
               {highlight}
             </span>
+
             {after}
             <span className="blinking-cursor">|</span>
           </h1>
