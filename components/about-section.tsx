@@ -53,7 +53,7 @@ export default function AboutSection() {
           <div className="flex justify-center">
             <div className="group relative w-full max-w-md overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="/METOEVI Etienne.jpg"
+                src="/Metoevi Etienne.jpg"
                 alt="Etienne METOEVI"
                 className="
                   w-full h-full object-cover
