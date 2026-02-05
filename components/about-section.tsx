@@ -34,35 +34,61 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">À propos de moi</h2>
+
+        {/* HEADER */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            À propos de moi
+          </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Développeur fullstack passionné, spécialisé dans les technologies web et mobile modernes. Je crée des
-            solutions digitales qui répondent aux besoins réels des entreprises et startups.
+            Développeur fullstack passionné, spécialisé dans les technologies web et mobile modernes.
+            Je crée des solutions digitales utiles, performantes et évolutives.
           </p>
         </div>
 
-        {/* Photo entre header et vision */}
-        <div className="mb-12 w-full flex justify-center">
-          <div className="w-full max-w-md h-95 rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="/Metoevi.jpg"
-              alt="Etienne METOEVI"
-              className="w-full h-full object-cover brightness-90 transition duration-500 hover:brightness-100"
-            />
-          </div>
-        </div>
-
-        {/* Vision */}
+        {/* PHOTO + TEXTE (PC: gauche/droite | Mobile: vertical) */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Ma vision</h3>
+
+          {/* PHOTO */}
+          <div className="flex justify-center">
+            <div className="group relative w-full max-w-md overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src="/METOEVI Etienne.jpg"
+                alt="Etienne METOEVI"
+                className="
+                  w-full h-full object-cover
+                  transition-all duration-700
+                  group-hover:scale-105
+                  group-hover:brightness-110
+                "
+              />
+
+              {/* Overlay glow */}
+              <div
+                className="
+                  absolute inset-0
+                  bg-gradient-to-tr from-blue-500/20 to-indigo-500/20
+                  opacity-0 group-hover:opacity-100
+                  transition duration-700
+                "
+              />
+            </div>
+          </div>
+
+          {/* TEXTE */}
+          <div className="animate-fade-in-up">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              Ma vision
+            </h3>
+
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              La technologie doit servir l'humain. Mon approche consiste à comprendre vos besoins pour créer des solutions sur mesure, performantes et évolutives.
+              La technologie doit servir l'humain. Mon approche consiste à comprendre
+              vos besoins pour concevoir des solutions sur mesure, fiables et évolutives.
             </p>
+
             <p className="text-gray-600 dark:text-gray-300 mb-6">
-              Spécialisé dans l'écosystème JavaScript/TypeScript et les technologies modernes, je vous accompagne de la conception à la mise en production.
+              Spécialisé dans l'écosystème JavaScript / TypeScript et les technologies modernes,
+              je vous accompagne de l’idée à la mise en production.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -79,36 +105,168 @@ export default function AboutSection() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full text-sm font-medium transition transform hover:scale-105"
+                  className="
+                    px-3 py-1
+                    bg-gradient-to-r from-blue-400 to-indigo-500
+                    text-white rounded-full text-sm font-medium
+                    transition transform hover:scale-105
+                  "
                 >
                   {tech}
                 </span>
               ))}
             </div>
           </div>
-          {/* On peut mettre un élément vide ou décoration ici pour l'équilibre sur desktop */}
-          <div className="hidden md:block"></div>
+
         </div>
 
-        {/* Features */}
+        {/* FEATURES */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className={`border-0 shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 bg-gradient-to-br ${feature.color}`}
+              className={`
+                border-0 shadow-lg
+                hover:shadow-2xl
+                transition-transform duration-300
+                transform hover:-translate-y-2
+                bg-gradient-to-br ${feature.color}
+              `}
             >
               <CardContent className="p-6 text-center text-white">
-                <div className="mb-4 flex justify-center">{feature.icon}</div>
-                <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
-                <p className="text-sm">{feature.description}</p>
+                <div className="mb-4 flex justify-center">
+                  {feature.icon}
+                </div>
+                <h4 className="text-lg font-semibold mb-2">
+                  {feature.title}
+                </h4>
+                <p className="text-sm">
+                  {feature.description}
+                </p>
               </CardContent>
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   )
 }
+
+
+
+
+// "use client"
+
+// import { Card, CardContent } from "@/components/ui/card"
+// import { Code, Smartphone, Database, Globe } from "lucide-react"
+
+// export default function AboutSection() {
+//   const features = [
+//     {
+//       icon: <Globe className="w-10 h-10 text-white" />,
+//       title: "Applications Web",
+//       description: "Développement d'applications web modernes avec Next.js et Laravel",
+//       color: "from-blue-500 to-indigo-500",
+//     },
+//     {
+//       icon: <Smartphone className="w-10 h-10 text-white" />,
+//       title: "Applications Mobile",
+//       description: "Création d'apps mobiles cross-platform avec Flutter",
+//       color: "from-teal-400 to-cyan-500",
+//     },
+//     {
+//       icon: <Database className="w-10 h-10 text-white" />,
+//       title: "Backend & API",
+//       description: "Architecture backend robuste et APIs RESTful performantes",
+//       color: "from-purple-500 to-pink-500",
+//     },
+//     {
+//       icon: <Code className="w-10 h-10 text-white" />,
+//       title: "Solutions Complètes",
+//       description: "De l'idée au déploiement, je gère tous les aspects techniques",
+//       color: "from-yellow-400 to-orange-500",
+//     },
+//   ]
+
+//   return (
+//     <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
+//       <div className="container mx-auto px-4">
+//         {/* Header */}
+//         <div className="text-center mb-12">
+//           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">À propos de moi</h2>
+//           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+//             Développeur fullstack passionné, spécialisé dans les technologies web et mobile modernes. Je crée des
+//             solutions digitales qui répondent aux besoins réels des entreprises et startups.
+//           </p>
+//         </div>
+
+//         {/* Photo entre header et vision */}
+//         <div className="mb-12 w-full flex justify-center">
+//           <div className="w-full max-w-md h-95 rounded-2xl overflow-hidden shadow-2xl">
+//             <img
+//               src="/METOEVI Etienne.jpg"
+//               alt="Etienne METOEVI"
+//               className="w-full h-full object-cover brightness-90 transition duration-500 hover:brightness-100"
+//             />
+//           </div>
+//         </div>
+
+//         {/* Vision */}
+//         <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
+//           <div>
+//             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Ma vision</h3>
+//             <p className="text-gray-600 dark:text-gray-300 mb-4">
+//               La technologie doit servir l'humain. Mon approche consiste à comprendre vos besoins pour créer des solutions sur mesure, performantes et évolutives.
+//             </p>
+//             <p className="text-gray-600 dark:text-gray-300 mb-6">
+//               Spécialisé dans l'écosystème JavaScript/TypeScript et les technologies modernes, je vous accompagne de la conception à la mise en production.
+//             </p>
+
+//             <div className="flex flex-wrap gap-3">
+//               {[
+//                 "Flutter",
+//                 "FlutterFlow",
+//                 "Laravel",
+//                 "Next.js",
+//                 "Firebase",
+//                 "TypeScript",
+//                 "React",
+//                 "WordPress",
+//                 "Django",
+//               ].map((tech) => (
+//                 <span
+//                   key={tech}
+//                   className="px-3 py-1 bg-gradient-to-r from-blue-400 to-indigo-500 text-white rounded-full text-sm font-medium transition transform hover:scale-105"
+//                 >
+//                   {tech}
+//                 </span>
+//               ))}
+//             </div>
+//           </div>
+//           {/* On peut mettre un élément vide ou décoration ici pour l'équilibre sur desktop */}
+//           <div className="hidden md:block"></div>
+//         </div>
+
+//         {/* Features */}
+//         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+//           {features.map((feature, index) => (
+//             <Card
+//               key={index}
+//               className={`border-0 shadow-lg hover:shadow-2xl transition-transform duration-300 transform hover:-translate-y-2 bg-gradient-to-br ${feature.color}`}
+//             >
+//               <CardContent className="p-6 text-center text-white">
+//                 <div className="mb-4 flex justify-center">{feature.icon}</div>
+//                 <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
+//                 <p className="text-sm">{feature.description}</p>
+//               </CardContent>
+//             </Card>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   )
+// }
 
 // "use client"
 

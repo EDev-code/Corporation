@@ -1,6 +1,6 @@
 {
   "redirects": {
-    "description": "Configuration des redirections 301 pour le portfolio d'Étienne",
+    "description": "Configuration des redirections 301 pour le portfolio d'Etienne",
     "categories": {
       "pages": {
         "/about": "/#about",

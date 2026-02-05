@@ -64,6 +64,7 @@ export default function ContactSection() {
               <div className="space-y-6">
                 {[
                   { icon: Mail, label: "Email", value: "etiennemetoevi82@gmail.com" },
+                  { icon: Phone, label: "WfhatsApp", value: "+229 0159411467" },
                   { icon: Phone, label: "Téléphone", value: "+229 0159411467" },
                   { icon: MapPin, label: "Localisation", value: "Cotonou, Bénin" },
                 ].map((info, idx) => (
