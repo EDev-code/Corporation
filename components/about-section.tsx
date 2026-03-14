@@ -8,7 +8,7 @@ export default function AboutSection() {
   const [videoVisible, setVideoVisible] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setVideoVisible(true), 100) // animation légère
+    const timer = setTimeout(() => setVideoVisible(true), 100)
     return () => clearTimeout(timer)
   }, [])
 
@@ -40,26 +40,24 @@ export default function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="about" className="relative py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
 
         {/* VIDEO DE PRÉSENTATION */}
-        <div
-          className={`relative w-full max-w-4xl mx-auto mb-12 overflow-hidden rounded-2xl shadow-2xl transition-all duration-1000 ${
-            videoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+        {/* <div
+          className={`relative w-full max-w-4xl mx-auto mb-12 overflow-hidden rounded-2xl shadow-2xl transition-all duration-1000 ${videoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <video
-            src="/amour.mp4" 
+            src="/amour.mp4"
             autoPlay
             muted
             loop
             playsInline
             className="w-full h-full object-cover rounded-2xl"
           />
-          {/* Overlay sombre pour lisibilité */}
           <div className="absolute inset-0 bg-black/20"></div>
-        </div>
+        </div> */}
 
         {/* HEADER */}
         <div className="text-center mb-16">
@@ -74,21 +72,34 @@ export default function AboutSection() {
 
         {/* PHOTO + TEXTE */}
         <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
-           
-          {/* PHOTO en forme ronde plus grande */}
-          <div className="flex justify-center">
+
+          {/* PHOTO avec carreau flottant */}
+          <div className="flex justify-center relative">
             <div className="group relative w-80 h-90 sm:w-96 sm:h-96 md:w-96 md:h-96 overflow-hidden rounded-full shadow-2xl">
               <img
                 src="/Metoevi Etienne.jpg"
                 alt="Etienne METOEVI"
                 className="w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 group-hover:brightness-110 rounded-full"
               />
-              {/* Overlay glow */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-indigo-500/20 opacity-0 group-hover:opacity-100 transition duration-700 rounded-full" />
+
+              {/* 🌟 Carreau flottant sur la photo */}
+              <div
+                className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 p-6 rounded-xl border border-white/20 backdrop-blur-md shadow-lg transition-all duration-1000 ${videoVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+                  }`}
+                style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.05), rgba(0,0,0,0.2))",
+                }}
+              >
+                <p className="text-white text-center text-sm md:text-lg italic leading-relaxed animate-textGlow">
+                  Je crois en une générosité consciente. Donner est un choix, jamais une obligation. La valeur d’un geste réside dans le respect avec lequel il est offert et reçu.
+                </p>
+              </div>
             </div>
           </div>
+
           {/* TEXTE */}
-          <div className="animate-fade-in-up">
+          <div className="animate-fade-in-up relative">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Ma vision
             </h3>
@@ -101,7 +112,7 @@ export default function AboutSection() {
               je vous accompagne de l’idée à la mise en production.
             </p>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-6">
               {[
                 "Flutter",
                 "FlutterFlow",
@@ -141,10 +152,19 @@ export default function AboutSection() {
         </div>
 
       </div>
+
+      <style jsx>{`
+        @keyframes glow {
+          0%,100% { text-shadow: 0 0 5px #0af, 0 0 10px #0af; }
+          50% { text-shadow: 0 0 15px #0af, 0 0 30px #0af; }
+        }
+        .animate-textGlow {
+          animation: glow 2s ease-in-out infinite alternate;
+        }
+      `}</style>
     </section>
   )
 }
-
 
 
 
