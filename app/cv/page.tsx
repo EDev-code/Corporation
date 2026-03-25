@@ -233,9 +233,40 @@ export default function CVPage() {
             </div>
           </motion.div>
 
+          {/* Bottom : Centres d’intérêt & Certifications */}
+          <motion.div initial="hidden" animate="show" variants={fadeUp}>
+            <div className="grid grid-cols-2 gap-8">
+
+              <div>
+                <h2 className="text-xl font-semibold border-l-4 border-blue-500 pl-3 mb-3">
+                  Centres d’intérêt
+                </h2>
+                <ul className="text-gray-600 text-sm space-y-1">
+                  <li>Technologies</li>
+                  <li>Entrepreneuriat</li>
+                  <li>Lecture</li>
+                  <li>Sport</li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="text-xl font-semibold border-l-4 border-blue-500 pl-3 mb-3">
+                  Certifications
+                </h2>
+                <ul className="text-gray-600 text-sm space-y-1">
+                  <li>Hashgraph</li>
+                  <li>10000 Codeurs</li>
+                </ul>
+              </div>
+
+            </div>
+          </motion.div>
+
         </div>
 
       </div>
     </div>
   )
 }
+
+

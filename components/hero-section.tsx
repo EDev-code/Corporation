@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
 
-  const fullText = "Bonjour, je suis Etienne"
+  const fullText = "Hi, je suis Etienne"
   const highlightedWord = "Etienne"
   const jobTitleText = "Développeur Fullstack Web & Mobile"
 
