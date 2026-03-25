@@ -26,20 +26,35 @@ export default function Header() {
     { href: "#skills", label: "Compétences" },
     { href: "#experience", label: "Expérience" },
     { href: "#contact", label: "Contact" },
+    { href: "https://form-et.vercel.app/", label: "Inscription" },
   ]
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full h-20 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white dark:bg-gray-900 shadow-md"
-          : "bg-white/80 dark:bg-gray-900/80 backdrop-blur"
-      }`}
+      className={`fixed top-0 left-0 w-full h-20 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-white dark:bg-gray-900 shadow-md"
+        : "bg-white/80 dark:bg-gray-900/80 backdrop-blur"
+        }`}
     >
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         {/* Logo */}
-        <a href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+        {/* <a href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
           E.Dev
+        </a> */}
+
+        <a href="/" className="relative flex items-center group">
+          {/* Glow background */}
+          <div className="absolute inset-0 bg-blue-500/20 blur-xl opacity-0 group-hover:opacity-100 transition duration-500 rounded-full"></div>
+
+          {/* Ring animé */}
+          <div className="absolute inset-0 rounded-full border border-blue-400/30 scale-90 group-hover:scale-110 transition duration-500"></div>
+
+          {/* Logo */}
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="relative h-20 w-auto object-contain transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
+          />
         </a>
 
         {/* Desktop nav */}
@@ -59,13 +74,14 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           {/* CV */}
           <a
-            href="https://www.canva.com/design/DAGjZQ34c5Q/v3f-CcFulHf24ZrMCzExmg/edit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:block"
+            href="/cv"
+            // target="_blank"
+            // rel="noopener noreferrer"
+            className=" sm:block"
           >
             <Button variant="outline" size="sm">
-              <Download className="w-4 h-4 mr-2" /> CV
+              CV
+              {/* <Download className="w-4 h-4 mr-2" /> CV */}
             </Button>
           </a>
 
